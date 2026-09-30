@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Red Door &amp; BOHO Growth Brief</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+/* Layout: single centered column, boutique-consulting brief. Brand red used only for the door motif, section marks and CTA; severity carries its own amber/red scale. */
+:root{
+  --bg:#f7f4ef;          /* warm paper */
+  --surface:#fffdfa;
+  --ink:#211c19;         /* warm near-black */
+  --muted:#7b716a;       /* warm grey */
+  --line:#e6ded4;
+  --accent:#b41f2e;      /* door red */
+  --accent-soft:#f3dcdd;
+  --high:#b4302a;        /* severity: high */
+  --high-bg:#f6ddd9;
+  --med:#9a6b12;         /* severity: medium */
+  --med-bg:#f5e8cf;
+  --go:#2f7350;          /* opportunity / next */
+  --go-bg:#d9ecdf;
+  --shadow:0 1px 2px rgba(33,28,25,.05),0 8px 24px rgba(33,28,25,.06);
+  --font-display:'Fraunces',Georgia,serif;
+  --font-body:'IBM Plex Sans',system-ui,sans-serif;
+  --font-mono:'IBM Plex Mono',ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#16120f; --surface:#1e1915; --ink:#eee7df; --muted:#a2978d; --line:#332b25;
+  --accent:#e2707a; --accent-soft:#3a1f22;
+  --high:#e58077; --high-bg:#3a201d; --med:#d6a94e; --med-bg:#352a16; --go:#6cc492; --go-bg:#1c3227;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 28px rgba(0,0,0,.35);
+  color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --bg:#16120f; --surface:#1e1915; --ink:#eee7df; --muted:#a2978d; --line:#332b25;
+  --accent:#e2707a; --accent-soft:#3a1f22;
+  --high:#e58077; --high-bg:#3a201d; --med:#d6a94e; --med-bg:#352a16; --go:#6cc492; --go-bg:#1c3227;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 28px rgba(0,0,0,.35);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:940px;margin:0 auto;padding-inline:20px;padding-block:0}
+a{color:var(--accent)}
+h1,h2,h3{text-wrap:balance;margin:0}
+.mono{font-family:var(--font-mono);letter-spacing:.02em}
+.eyebrow{font-family:var(--font-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+
+/* top bar */
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:18px;border-bottom:1px solid var(--line)}
+.brandmark{display:flex;align-items:center;gap:10px}
+.door{width:16px;height:22px;border-radius:2px 2px 0 0;background:var(--accent);position:relative;box-shadow:var(--shadow)}
+.door::after{content:"";position:absolute;width:3px;height:3px;border-radius:50%;background:var(--surface);right:3px;top:9px}
+.topbar .who{font-family:var(--font-mono);font-size:11px;color:var(--muted);letter-spacing:.04em}
+.tgl{border:1px solid var(--line);background:var(--surface);color:var(--muted);border-radius:999px;width:34px;height:34px;cursor:pointer;font-size:14px;line-height:1;display:grid;place-items:center}
+.tgl:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* hero */
+.hero{padding-block:42px 30px}
+.hero h1{font-family:var(--font-display);font-weight:600;font-size:clamp(30px,5.4vw,50px);line-height:1.04;letter-spacing:-.01em}
+.hero h1 .red{color:var(--accent)}
+.hero p.lede{font-size:clamp(16px,2.2vw,19px);color:var(--muted);max-width:60ch;margin-top:16px}
+.prepared{margin-top:22px;font-family:var(--font-mono);font-size:12px;color:var(--muted);display:flex;flex-wrap:wrap;gap:8px 18px}
+.prepared b{color:var(--ink);font-weight:500}
+
+/* snapshot tiles */
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-block:8px 40px}
+.tile{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 16px 15px;box-shadow:var(--shadow)}
+.tile .k{font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.tile .v{font-family:var(--font-display);font-weight:600;font-size:clamp(22px,3.4vw,30px);margin-top:6px;font-variant-numeric:tabular-nums;line-height:1}
+.tile .v.warn{color:var(--accent)}
+.tile .s{font-size:12.5px;color:var(--muted);margin-top:5px}
+
+/* section heading */
+.sec{padding-block:8px 30px}
+.sechead{display:flex;align-items:baseline;gap:12px;margin-bottom:18px}
+.sechead .num{font-family:var(--font-mono);font-size:12px;color:var(--accent)}
+.sechead h2{font-family:var(--font-display);font-weight:600;font-size:clamp(21px,3vw,27px)}
+.sechead .note{margin-left:auto;font-size:12.5px;color:var(--muted);text-align:right}
+
+/* gap cards */
+.gaps{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.gap{background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);overflow:hidden}
+.gap>button{all:unset;display:block;width:100%;cursor:pointer;padding:16px 18px}
+.gap>button:focus-visible{outline:2px solid var(--accent);outline-offset:-3px}
+.gap .row1{display:flex;align-items:center;gap:10px}
+.chip{font-family:var(--font-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:999px;white-space:nowrap}
+.chip.high{background:var(--high-bg);color:var(--high)}
+.chip.med{background:var(--med-bg);color:var(--med)}
+.gap h3{font-family:var(--font-body);font-weight:600;font-size:15.5px;margin-left:2px}
+.gap .plus{margin-left:auto;color:var(--muted);font-family:var(--font-mono);font-size:18px;transition:transform .18s ease}
+.gap[aria-open="true"] .plus{transform:rotate(45deg)}
+.gap .found{color:var(--muted);font-size:13.5px;margin-top:9px}
+.gap .detail{max-height:0;overflow:hidden;transition:max-height .24s ease}
+.gap[aria-open="true"] .detail{max-height:260px}
+.gap .detail .inner{padding:0 18px 16px;border-top:1px dashed var(--line);margin-top:2px;padding-top:13px}
+.gap .impact{font-size:13.5px}
+.gap .maps{margin-top:10px;font-family:var(--font-mono);font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.gap .maps b{color:var(--accent);font-weight:500}
+
+/* start columns */
+.start{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.col{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 18px 8px;box-shadow:var(--shadow)}
+.col h3{font-family:var(--font-body);font-weight:600;font-size:14px;display:flex;align-items:center;gap:8px}
+.col h3 .dot{width:8px;height:8px;border-radius:50%}
+.col.win h3 .dot{background:var(--go)}
+.col.found2 h3 .dot{background:var(--accent)}
+.col ul{list-style:none;margin:14px 0 0;padding:0}
+.col li{font-size:13.5px;padding:9px 0;border-top:1px solid var(--line);color:var(--ink)}
+.col li:first-child{border-top:0}
+
+/* pathway */
+.path{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.phase{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:var(--shadow);position:relative}
+.phase .wk{font-family:var(--font-mono);font-size:11px;color:var(--accent);letter-spacing:.06em}
+.phase h3{font-family:var(--font-display);font-weight:600;font-size:18px;margin-top:6px}
+.phase ul{list-style:none;margin:12px 0 0;padding:0}
+.phase li{font-size:13px;color:var(--muted);padding-left:16px;position:relative;margin-bottom:8px;line-height:1.45}
+.phase li::before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent)}
+
+/* cta */
+.cta{margin-block:14px 46px;background:#201f1d;color:#efe9e1;border-radius:18px;padding:34px clamp(22px,4vw,40px);box-shadow:var(--shadow)}
+.cta .eyebrow{color:var(--accent)}
+.cta h2{font-family:var(--font-display);font-weight:600;font-size:clamp(22px,3.4vw,30px);margin-top:10px;color:#fbf7f1}
+.cta p{margin-top:12px;font-size:15px;max-width:58ch;color:#cbc4ba}
+.cta .steps{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:20px;font-family:var(--font-mono);font-size:12.5px;letter-spacing:.03em}
+.cta .steps span{display:flex;align-items:center;gap:8px}
+.cta .steps b{color:var(--accent);font-weight:500}
+
+footer{border-top:1px solid var(--line);padding-block:22px 40px;font-family:var(--font-mono);font-size:11.5px;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 16px;justify-content:space-between}
+
+@media (max-width:760px){
+  .tiles{grid-template-columns:1fr 1fr}
+  .gaps{grid-template-columns:1fr}
+  .start{grid-template-columns:1fr}
+  .path{grid-template-columns:1fr}
+  .sechead .note{display:none}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="topbar">
+    <div class="brandmark"><span class="door" aria-hidden="true"></span><span class="who">GROWTH BRIEF</span></div>
+    <button class="tgl" id="themeBtn" aria-label="Toggle light and dark">◐</button>
+  </div>
+
+  <header class="hero">
+    <div class="eyebrow">Multifamily marketing &middot; Phoenix metro</div>
+    <h1>Where <span class="red">Red&nbsp;Door</span> and <span class="red">BOHO</span> are leaking growth, and the way out.</h1>
+    <p class="lede">A focused read of your current setup against the role you posted. Six things are quietly holding back leads and occupancy right now. None of them are hard to fix.</p>
+    <div class="prepared">
+      <span>Prepared for <b>Red Door Management &amp; BOHO Properties</b></span>
+      <span>September 2026</span>
+      <span>By <b>Usman</b></span>
+    </div>
+  </header>
+
+  <section class="tiles" aria-label="Portfolio snapshot">
+    <div class="tile"><div class="k">Portfolio</div><div class="v">~15</div><div class="s">communities across Phoenix</div></div>
+    <div class="tile"><div class="k">Brands</div><div class="v" style="font-size:19px">Red Door + BOHO</div><div class="s">two sites, two setups</div></div>
+    <div class="tile"><div class="k">Conversion tracking</div><div class="v warn">Missing</div><div class="s">no lead or ad tracking found</div></div>
+    <div class="tile"><div class="k">Paid campaigns live</div><div class="v warn">0</div><div class="s">no active lead engine</div></div>
+  </section>
+
+  <section class="sec">
+    <div class="sechead">
+      <span class="num">01</span>
+      <h2>What's holding growth back</h2>
+      <span class="note">tap a card for the impact</span>
+    </div>
+    <div class="gaps" id="gaps">
+
+      <article class="gap" aria-open="true">
+        <button aria-expanded="true">
+          <div class="row1"><span class="chip high">High</span><h3>You're flying without instruments</h3><span class="plus">+</span></div>
+          <div class="found">No analytics or conversion tracking on the Red Door site, and a doubled-up setup on BOHO.</div>
+        </button>
+        <div class="detail"><div class="inner">
+          <div class="impact">You can't see which channels actually produce leases, so any spend goes in blind and the monthly reporting you want isn't trustworthy yet.</div>
+          <div class="maps">Maps to your ask: <b>Analytics &amp; reporting, conversion tracking</b></div>
+        </div></div>
+      </article>
+
+      <article class="gap">
+        <button aria-expanded="false">
+          <div class="row1"><span class="chip high">High</span><h3>Renters hit a dead end</h3><span class="plus">+</span></div>
+          <div class="found">The BOHO availability page currently shows no units, so a renter who lands there can't browse or apply.</div>
+        </button>
+        <div class="detail"><div class="inner">
+          <div class="impact">Interested renters leave without becoming a lead, even while units are open elsewhere. This is your most direct occupancy leak.</div>
+          <div class="maps">Maps to your ask: <b>Lead generation, occupancy, conversion</b></div>
+        </div></div>
+      </article>
+
+      <article class="gap">
+        <button aria-expanded="false">
+          <div class="row1"><span class="chip high">High</span><h3>Invisible when renters search</h3><span class="plus">+</span></div>
+          <div class="found">Your Google Business listing shows no reviews, while other Phoenix communities can sit near 4.8 stars.</div>
+        </button>
+        <div class="detail"><div class="inner">
+          <div class="impact">People searching locally click the listings that look trusted. Empty profiles lose that click before you ever get the enquiry.</div>
+          <div class="maps">Maps to your ask: <b>SEO, occupancy, lead generation</b></div>
+        </div></div>
+      </article>
+
+      <article class="gap">
+        <button aria-expanded="false">
+          <div class="row1"><span class="chip med">Medium</span><h3>Silent on the channels renters use</h3><span class="plus">+</span></div>
+          <div class="found">Instagram and Facebook are near empty, and there's no TikTok or YouTube presence.</div>
+        </button>
+        <div class="detail"><div class="inner">
+          <div class="impact">The feeds renters actually scroll aren't working for you, so demand leans entirely on word of mouth and listing sites.</div>
+          <div class="maps">Maps to your ask: <b>Social (TikTok &amp; Instagram), content, brand voice</b></div>
+        </div></div>
+      </article>
+
+      <article class="gap">
+        <button aria-expanded="false">
+          <div class="row1"><span class="chip med">Medium</span><h3>No engine bringing leads on demand</h3><span class="plus">+</span></div>
+          <div class="found">No Google Ads or Meta ads are running, and the tags needed to run them profitably aren't in place.</div>
+        </button>
+        <div class="detail"><div class="inner">
+          <div class="impact">There's no channel you can turn up to fill a slow month, and nothing measuring return when you do spend.</div>
+          <div class="maps">Maps to your ask: <b>Google Ads, PPC, ROI</b></div>
+        </div></div>
+      </article>
+
+      <article class="gap">
+        <button aria-expanded="false">
+          <div class="row1"><span class="chip med">Medium</span><h3>Not set up to nurture or convert</h3><span class="plus">+</span></div>
+          <div class="found">Email isn't set up for deliverability, a public contact runs through a personal Gmail, and more than one phone number appears across the site.</div>
+        </button>
+        <div class="detail"><div class="inner">
+          <div class="impact">Nurture emails would risk the spam folder, and inconsistent contact details quietly cost you enquiries.</div>
+          <div class="maps">Maps to your ask: <b>Email automation, website &amp; conversion</b></div>
+        </div></div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sechead"><span class="num">02</span><h2>Where we'd start</h2></div>
+    <div class="start">
+      <div class="col win">
+        <h3><span class="dot"></span>Quick wins, first days</h3>
+        <ul>
+          <li>Get live units showing on the availability page</li>
+          <li>Tidy the contact details: one phone number, a branded email</li>
+          <li>Build up the Google Business profiles: reviews, photos, info</li>
+          <li>Put clean analytics and conversion tracking in place</li>
+        </ul>
+      </div>
+      <div class="col found2">
+        <h3><span class="dot"></span>Foundation, first weeks</h3>
+        <ul>
+          <li>One measurement setup across both brands</li>
+          <li>Launch Google Ads and retargeting to real landing pages</li>
+          <li>Stand up an Instagram and TikTok content rhythm</li>
+          <li>Build email nurture that actually reaches the inbox</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sechead"><span class="num">03</span><h2>The first 90 days</h2></div>
+    <div class="path">
+      <div class="phase">
+        <div class="wk">Weeks 1 to 3</div>
+        <h3>Measure &amp; fix</h3>
+        <ul>
+          <li>Tracking and conversion events clean across both brands</li>
+          <li>Broken lead path repaired, local profiles live</li>
+          <li>Baseline set so every next move is measurable</li>
+        </ul>
+      </div>
+      <div class="phase">
+        <div class="wk">Weeks 3 to 8</div>
+        <h3>Launch &amp; acquire</h3>
+        <ul>
+          <li>Google Ads and Meta live to dedicated landing pages</li>
+          <li>Instagram and TikTok content calendar running</li>
+          <li>First email drips for prospects and residents</li>
+        </ul>
+      </div>
+      <div class="phase">
+        <div class="wk">Weeks 8 to 12</div>
+        <h3>Scale &amp; report</h3>
+        <ul>
+          <li>Spend shifted toward what actually converts</li>
+          <li>Organic traffic and reviews growing</li>
+          <li>One monthly dashboard across the portfolio</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="eyebrow">Next step</div>
+    <h2>A complete audit in your hands within 24 hours.</h2>
+    <p>This brief is the headline. The full audit lays out each item in detail with the exact fix. From there we move straight to implementing the actions that move occupancy and leads.</p>
+    <div class="steps">
+      <span><b>01</b> Full audit within 24 hours</span>
+      <span><b>02</b> Agree the priorities</span>
+      <span><b>03</b> Implement, measure, repeat</span>
+    </div>
+  </section>
+
+  <footer>
+    <span>Prepared for Red Door Management &amp; BOHO Properties</span>
+    <span>September 2026 &middot; Usman</span>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  // theme toggle (per-viewer convenience)
+  var btn=document.getElementById('themeBtn');
+  try{var saved=localStorage.getItem('rdbrief-theme');if(saved)document.documentElement.setAttribute('data-theme',saved);}catch(e){}
+  btn.addEventListener('click',function(){
+    var cur=document.documentElement.getAttribute('data-theme');
+    var next = cur==='dark' ? 'light' : (cur==='light' ? 'dark' : (matchMedia('(prefers-color-scheme: dark)').matches?'light':'dark'));
+    document.documentElement.setAttribute('data-theme',next);
+    try{localStorage.setItem('rdbrief-theme',next);}catch(e){}
+  });
+  // expandable gap cards
+  document.querySelectorAll('.gap > button').forEach(function(b){
+    b.addEventListener('click',function(){
+      var card=b.closest('.gap');
+      var open=card.getAttribute('aria-open')==='true';
+      card.setAttribute('aria-open', open?'false':'true');
+      b.setAttribute('aria-expanded', open?'false':'true');
+    });
+  });
+})();
+</script>
+</body>
+</html>
